@@ -38,6 +38,6 @@ def generate_svg_endpoint():
     return Response(svg_image, mimetype='image/svg+xml', headers={
         "Content-Disposition": "attachment; filename=image.svg"
     })
-
+port_number = 80
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=port_number)
