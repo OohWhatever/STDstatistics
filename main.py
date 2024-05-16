@@ -42,4 +42,4 @@ def generate_svg_endpoint():
     })
 port_number = 80
 if __name__ == '__main__':
-    app.run(debug=False,port=port_number)
+    app.run(debug=False,host='0.0.0.0',port=port_number)
