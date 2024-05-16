@@ -1,5 +1,6 @@
 from flask import Flask, request, Response
 import requests
+import random
 
 app = Flask(__name__)
 
@@ -33,12 +34,13 @@ def generate_svg_endpoint():
     if not user_data:
         return "User not found", 404
     
+    random_number = random.randint(1, 100000000)
     username = user_data['username']
     position = user_data['position']
     
     svg_image = generate_svg(username, position)
     return Response(svg_image, mimetype='image/svg+xml', headers={
-        "Content-Disposition": "attachment; filename=image.svg"
+        "Content-Disposition": "attachment; filename=image"+str(random_number)+".svg"
     })
 @app.after_request
 def add_header(r):
