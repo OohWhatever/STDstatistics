@@ -20,7 +20,9 @@ def generate_svg(username, cr_position):
     </svg>
     '''
     return svg_template
-
+@app.route('/', methods=['GET'])
+def mainasd():
+    return("Please use /generate-svg?username=Your_Username")
 @app.route('/generate-svg', methods=['GET'])
 def generate_svg_endpoint():
     username = request.args.get('username')
@@ -40,4 +42,4 @@ def generate_svg_endpoint():
     })
 port_number = 80
 if __name__ == '__main__':
-    app.run(debug=True,port=port_number)
+    app.run(debug=False,port=port_number)
