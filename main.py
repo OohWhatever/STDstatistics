@@ -11,12 +11,12 @@ def fetch_user_data(username):
     data = response.json()
     return data['items'][0] if data['items'] else None
 
-def generate_svg(username, cr_position):
+def generate_svg(username, position):
     svg_template = f'''
     <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
         <rect width="100%" height="100%" fill="lightgrey" />
         <text x="10" y="30" font-size="20" fill="black">Username: {username}</text>
-        <text x="10" y="60" font-size="20" fill="black">CR Position: {cr_position}</text>
+        <text x="10" y="60" font-size="20" fill="black">Position: {position}</text>
     </svg>
     '''
     return svg_template
@@ -34,9 +34,9 @@ def generate_svg_endpoint():
         return "User not found", 404
     
     username = user_data['username']
-    cr_position = user_data['position']
+    position = user_data['position']
     
-    svg_image = generate_svg(username, cr_position)
+    svg_image = generate_svg(username, position)
     return Response(svg_image, mimetype='image/svg+xml', headers={
         "Content-Disposition": "attachment; filename=image.svg"
     })
