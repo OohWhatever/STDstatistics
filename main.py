@@ -34,7 +34,7 @@ def generate_svg_endpoint():
         return "User not found", 404
     
     username = user_data['username']
-    cr_position = user_data['crPosition']
+    cr_position = user_data['position']
     
     svg_image = generate_svg(username, cr_position)
     return Response(svg_image, mimetype='image/svg+xml', headers={
