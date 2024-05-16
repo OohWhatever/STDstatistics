@@ -40,7 +40,11 @@ def generate_svg_endpoint():
     
     svg_image = generate_svg(username, position)
     return Response(svg_image, mimetype='image/svg+xml', headers={
-        "Content-Disposition": "attachment; filename=image"+str(random_number)+".svg"
+        "Content-Disposition": f"attachment; filename=image{random_number}.svg",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0",
+        "Cache-Control": "public, max-age=0"
     })
 @app.after_request
 def add_header(r):
