@@ -15,11 +15,19 @@ def fetch_user_data(username):
 
 def generate_svg(username, position):
     svg_template = f'''
-    <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="lightgrey" />
-        <text x="10" y="30" font-size="20" fill="black">Username: {username}</text>
-        <text x="10" y="60" font-size="20" fill="black">Position: {position}</text>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
+   <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oswald|Raleway|Roboto|Indie+Flower|Gamja+Flower');</style>
+  <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="#080820" />
+    <text x="50%" y="30%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="35" font-weight="bold">
+    STANDOFF365 RATING
+  </text>
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" fill="white" font-size="18"  font-weight="bold" >
+    Username: {username}
+  </text>
+  <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="18" font-weight="bold" >
+    Rating: {position}
+  </text>
+</svg>
     '''
     return svg_template
 @app.route('/', methods=['GET'])
