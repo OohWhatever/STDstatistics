@@ -20,7 +20,7 @@ def generate_svg(username, position):
     <text x="50%" y="30%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="35" font-weight="bold">
     STANDOFF365 RATING
   </text>
-  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" fill="white" font-size="18" font-weight="bold">
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
     Username: {username}</text>
   <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="18" font-weight="bold">
     Rating: {position}</text>
