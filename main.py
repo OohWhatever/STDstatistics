@@ -45,7 +45,7 @@ def generate_svg(username, position):
 <defs>
         <linearGradient id="MyGradient">
           <stop offset="5%" stop-color="#0e1231" />
-          <stop offset="95%" stop-color="#370000" />
+          <stop offset="95%" stop-color="#5c0000" />
         </linearGradient>
       </defs>
 </svg>
