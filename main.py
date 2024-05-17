@@ -66,7 +66,7 @@ def generate_svg_endpoint():
     
     random_number = random.randint(1, 100000000)
     username = user_data['username']
-    position = user_data['position']
+    position = user_data['crPosition']
     
     svg_image = generate_svg(username, position)
     return Response(svg_image, mimetype='image/svg+xml')
