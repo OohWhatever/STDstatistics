@@ -15,8 +15,7 @@ def fetch_user_data(username):
 
 def generate_svg(username, position):
     svg_template = f'''
-    <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
-   <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oswald|Raleway|Roboto|Indie+Flower|Gamja+Flower');</style>
+   <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
   <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="#080820" />
     <text x="50%" y="30%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="35" font-weight="bold">
     STANDOFF365 RATING
