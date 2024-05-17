@@ -16,7 +16,7 @@ def fetch_user_data(username):
 def generate_svg(username, position):
     svg_template = f'''
    <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
-  <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="#080820" />
+  <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="url(#MyGradient)" />
 <svg x="223" y="130" fill="white" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 width="20px" height="20px" viewBox="0 0 31.891 31.891"
 	 xml:space="preserve">
@@ -42,6 +42,12 @@ def generate_svg(username, position):
     Username: {username}</text>
   <text x="50%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">
     Rating: {position}</text>
+<defs>
+        <linearGradient id="MyGradient">
+          <stop offset="5%" stop-color="#0e1231" />
+          <stop offset="95%" stop-color="#370000" />
+        </linearGradient>
+      </defs>
 </svg>
     '''
     return svg_template
