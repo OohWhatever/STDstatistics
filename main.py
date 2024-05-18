@@ -62,7 +62,7 @@ def generate_svg_endpoint():
     bbTotal = user_data['bbTotal']
     crBusinessRisk = user_data['crBusinessRisk']
     
-    svg_image = generate_svg(username, position)
+    svg_image = generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk)
     return Response(svg_image, mimetype='image/svg+xml')
 @app.after_request
 def add_header(r):
