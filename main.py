@@ -15,28 +15,37 @@ def fetch_user_data(username):
 
 def generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk):
     svg_template = f'''
-     <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
+ <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
   <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="url(#MyGradient)" />
 
-    <text x="35" y="40" fill="white" font-size="25" font-weight="bold" font-family="Arial">
-    STANDOFF365 RATINGS
+    <text x="30" y="40" fill="white" font-size="25" font-weight="bold" font-family="Arial">
+    STANDOFF365 metrics
   </text>
+    
   <text x="30" y="80" fill="white" font-size="13" font-weight="bold" font-family="Arial">
-    Username: {username}</text>
-  <text x="80%" y="40%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">
-    RATING </text>
-   <text x="80%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">
+    Username: </text>
+   <text x="110" y="80" fill="#00ff33" font-size="13" font-weight="bold" font-family="Arial">
+    {username}</text>
+  <text x="75%" y="40%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="17" font-weight="bold" font-family="Arial">
+    CYBERRANGE RATING </text>
+   <text x="75%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="#ff0000" font-size="50" font-weight="bold" font-family="Arial">
     {position}</text>
   <text x="30" y="102" fill="white" font-size="13" font-weight="bold" font-family="Arial">
-    Vuln score: {crVulnerability}</text>
+    Vuln score: </text>
+   <text x="110" y="102" fill="#00ff33" font-size="13" font-weight="bold" font-family="Arial">
+    {crVulnerability}</text>
    <text x="30" y="170" fill="white" font-size="13" font-weight="bold" font-family="Arial">
-    Bug Bounty score: {bbTotal}</text>
+    Bug Bounty score: </text>
+   <text x="150" y="170" fill="#66ffff" font-size="13" font-weight="bold" font-family="Arial">
+    {bbTotal}</text>
    <text x="30" y="125" fill="white" font-size="13" font-weight="bold" font-family="Arial">
-    Buisness Risc score: {crBusinessRisk}</text>
+    Buisness Risc score: </text>
+   <text x="170" y="125" fill="#00ff33" font-size="13" font-weight="bold" font-family="Arial">
+    {crBusinessRisk}</text>
 <defs>
         <linearGradient id="MyGradient">
-          <stop offset="5%" stop-color="#0e1231" />
-          <stop offset="95%" stop-color="#5c0000" />
+          <stop offset="5%" stop-color="#660033" />
+          <stop offset="95%" stop-color="#0e1231" />
         </linearGradient>
       </defs>
 </svg>
