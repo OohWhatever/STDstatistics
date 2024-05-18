@@ -15,8 +15,8 @@ def fetch_user_data(username):
 
 def generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk):
     svg_template = f'''
- <svg xmlns="http://www.w3.org/2000/svg" width="470" height="200">
-  <rect x="0" y="0" width="470" height="200" rx="20" ry="20" fill="url(#MyGradient)" />
+  <svg xmlns="http://www.w3.org/2000/svg" width="470" height="180">
+  <rect x="0" y="0" width="470" height="180" rx="20" ry="20" fill="url(#MyGradient)" />
 
     <text x="30" y="40" fill="white" font-size="25" font-weight="bold" font-family="Arial">
     STANDOFF365 metrics
@@ -28,15 +28,15 @@ def generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk):
     {username}</text>
   <text x="75%" y="40%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="17" font-weight="bold" font-family="Arial">
     CYBERRANGE RATING </text>
-   <text x="75%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="#ff0000" font-size="50" font-weight="bold" font-family="Arial">
+   <text x="75%" y="65%" dominant-baseline="middle" text-anchor="middle" fill="#ff0000" font-size="70" font-weight="bold" font-family="Arial">
     {position}</text>
   <text x="30" y="102" fill="white" font-size="13" font-weight="bold" font-family="Arial">
     Vuln score: </text>
    <text x="110" y="102" fill="#00ff33" font-size="13" font-weight="bold" font-family="Arial">
     {crVulnerability}</text>
-   <text x="30" y="170" fill="white" font-size="13" font-weight="bold" font-family="Arial">
+   <text x="30" y="155" fill="white" font-size="13" font-weight="bold" font-family="Arial">
     Bug Bounty score: </text>
-   <text x="150" y="170" fill="#66ffff" font-size="13" font-weight="bold" font-family="Arial">
+   <text x="150" y="155" fill="#66ffff" font-size="13" font-weight="bold" font-family="Arial">
     {bbTotal}</text>
    <text x="30" y="125" fill="white" font-size="13" font-weight="bold" font-family="Arial">
     Buisness Risc score: </text>
