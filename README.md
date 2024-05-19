@@ -97,7 +97,7 @@ This code will update your badge everu hour
 >Here you need to change soime parameters like {Your-GitHub-login} to your login, { secrets.README_WORKFLOW } to name of your github secret and {Standoff365-login} to your actual login
 ## Create first img file
 
-Push to your repo emty data.svg file in `/img` folder
+Push to your repo emty data.svg file in `/img` folder or you can download it from `https://stdstatistics.onrender.com/generate-svg?username={Standoff365-login}`
 
 ![image](https://github.com/OohWhatever/STDstatistics/assets/41408448/bc51fc78-261e-4bcf-92b4-2abd1cc55af5)
 
