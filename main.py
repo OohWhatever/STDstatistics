@@ -51,6 +51,38 @@ def generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk):
 </svg>
     '''
     return svg_template
+
+
+def generatebb_svg(username, bbPosition, bbReportsCount):
+    bbsvg_template = f'''
+   <svg xmlns="http://www.w3.org/2000/svg" width="300" height="70" fill="none">
+    <rect width="220" height="20" y="48" x="10" rx="10" fill="url(#grad)" stroke="#FFFFFF" stroke-width="2"  />
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color: #4f0014; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #252850; stop-opacity: 1" />
+    </linearGradient>
+  </defs>
+  <polygon points="10,0 120,0 190,50 10,50" fill="#470736" rx="10" />
+  <rect width="300" height="35" y="15" rx="10" fill="url(#grad)" stroke="#FFFFFF" stroke-width="2"  />
+  <text x="10" y="38" fill="#f5f5f5" font-size="20" font-weight="bold" font-family="Arial">
+    BugBounty Rating:</text>
+   <text x="215" y="41" fill="#88f000" font-size="28" font-weight="bold" font-family="Arial">
+    {bbPosition}</text>
+    <text x="25" y="10" fill="#dbdbdb" font-size="11" font-weight="bold" font-family="Arial">
+    STANDOFF365</text>
+   <text x="25" y="63" fill="#dbdbdb" font-size="11" font-weight="bold" font-family="Arial">
+    BugBounty rebort count:  </text>
+ <text x="220" y="63" text-anchor="end" fill="#00ffa6" font-size="13" font-weight="bold" font-family="Arial">
+  {bbReportsCount}
+</text>
+</svg>
+
+    '''
+    return bbsvg_template
+
+
+
 @app.route('/', methods=['GET'])
 def mainasd():
     return("Please use /generate-svg?username=Your_Username")
@@ -70,10 +102,37 @@ def generate_svg_endpoint():
     crVulnerability = user_data['crVulnerability']
     bbTotal = user_data['bbTotal']
     crBusinessRisk = user_data['crBusinessRisk']
+    bbReportsCount = user_data['bbReportsCount']
     
     svg_image = generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk)
     return Response(svg_image, mimetype='image/svg+xml')
 @app.after_request
+
+
+
+
+@app.route('/generatebb-svg', methods=['GET'])
+def generate_svg_endpoint():
+    username = request.args.get('username')
+    if not username:
+        return "Username parameter is required", 400
+    
+    user_data = fetch_user_data(username)
+    if not user_data:
+        return "User not found", 404
+    
+    random_number = random.randint(1, 100000000)
+    username = user_data['username']
+    bbPosition = user_data['bbPosition']
+    bbTotal = user_data['bbTotal']
+    bbReportsCount = user_data['bbReportsCount']
+    
+    bbsvg_image = generate_svg(username, bbPosition, bbReportsCount)
+    return Response(bbsvg_image, mimetype='image/svg+xml')
+
+
+
+
 def add_header(r):
     """
     Add headers to both force latest IE rendering engine or Chrome Frame,
