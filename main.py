@@ -86,6 +86,9 @@ def generatebb_svg(username, bbPosition, bbReportsCount):
 @app.route('/', methods=['GET'])
 def mainasd():
     return("Please use /generate-svg?username=Your_Username")
+
+
+
 @app.route('/generate-svg', methods=['GET'])
 def generate_svg_endpoint():
     username = request.args.get('username')
@@ -112,7 +115,7 @@ def generate_svg_endpoint():
 
 
 @app.route('/generatebb-svg', methods=['GET'])
-def generate_svg_endpoint():
+def generatebb_svg_endpoint():
     username = request.args.get('username')
     if not username:
         return "Username parameter is required", 400
@@ -127,7 +130,7 @@ def generate_svg_endpoint():
     bbTotal = user_data['bbTotal']
     bbReportsCount = user_data['bbReportsCount']
     
-    bbsvg_image = generate_svg(username, bbPosition, bbReportsCount)
+    bbsvg_image = generatebb_svg(username, bbPosition, bbReportsCount)
     return Response(bbsvg_image, mimetype='image/svg+xml')
 
 
