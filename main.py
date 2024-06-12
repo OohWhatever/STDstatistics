@@ -106,7 +106,7 @@ def generate_svg_endpoint():
     
     svg_image = generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk)
     return Response(svg_image, mimetype='image/svg+xml')
-@app.after_request
+
 
 
 
@@ -132,7 +132,7 @@ def generate_svg_endpoint():
 
 
 
-
+@app.after_request
 def add_header(r):
     """
     Add headers to both force latest IE rendering engine or Chrome Frame,
