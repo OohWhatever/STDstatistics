@@ -1,11 +1,20 @@
 
 # ⚡ Project: Standoff365 cyberrange rating badge
 
-Here is the dynamic SVG image that updates every hour by GitHub Actions with new timestamp and how to:
+Here is the dynamic SVG image that updates every hour and how to install MANUAL:
 
-![Dynamic SVG Image](https://github.com/OohWhatever/OohWhatever/blob/main/img/data.svg?raw=true)
 
-## Setup a personal README profile:
+## Setup with link (1 min):
+
+Insert markdown link to profile:
+
+` ![STDRating](https://stdstatistics.onrender.com/generate-svg?username={Your_Standoff_login}) `
+
+![STDRating](https://stdstatistics.onrender.com/generate-svg?username=whatever)
+
+>⚠️ Images are cached for 1 hour after being rendered. They won't be updated during this time window when queried again. However it is possible to manually update them by using Github Actions again
+
+## Setup a personal README profile with Github Actions (10 mins):
 
 Create a repository with the same name as your GitHub login
 
