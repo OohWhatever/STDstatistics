@@ -81,7 +81,7 @@ def generatebb_svg(username, bbPosition, bbReportsCount):
 
 @app.route('/', methods=['GET'])
 def mainasd():
-    return("Please use /generate-svg?username=Your_Username")
+    return("Please use /generate-svg?username=Your_Username or /generatebb-svg?username=Your_Username")
 
 
 
