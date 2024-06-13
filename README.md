@@ -4,13 +4,7 @@
 Here is the dynamic SVG image that updates every hour and how to install MANUAL:
 
 
-## Setup with link (1 min):
 
-Insert markdown link to profile:
-
-` ![STDRating](https://stdstatistics.onrender.com/generate-svg?username={Your_Standoff_login}) `
-
-![STDRating](https://stdstatistics.onrender.com/generate-svg?username=whatever)
 
 >⚠️ Images are cached for 1 hour after being rendered. They won't be updated during this time window when queried again. However it is possible to manually update them by using Github Actions again
 
