@@ -80,11 +80,11 @@ def generatebb_svg(username, bbPosition, bbReportsCount):
 
 
 
-@app.route('/', methods=['GET'])
+@app.route('/help', methods=['GET'])
 def mainasd():
     return("Please use /generate-svg?username=Your_Username or /generatebb-svg?username=Your_Username")
 
-@app.route('/home')
+@app.route('/')
 def hello():
   return render_template('home.html')
 
