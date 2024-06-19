@@ -1,5 +1,6 @@
 
 from flask import Flask, request, Response
+from flask import render_template
 import requests
 import random
 
@@ -83,7 +84,9 @@ def generatebb_svg(username, bbPosition, bbReportsCount):
 def mainasd():
     return("Please use /generate-svg?username=Your_Username or /generatebb-svg?username=Your_Username")
 
-
+@app.route('/home')
+def hello():
+  return render_template('home.html')
 
 @app.route('/generate-svg', methods=['GET'])
 def generate_svg_endpoint():
