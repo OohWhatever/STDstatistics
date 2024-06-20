@@ -64,35 +64,42 @@ jobs:
 
     - name: Fetch SVG from API
       run: |
-        curl -o data.svg "https://stdstatistics.onrender.com/generate-svg?username={Standoff365-login}"
+        git pull
+        curl -o data.svg "https://stdstatistics.onrender.com/generate-svg?username={your_standoff365_login}"    # бейджик с основной статистикой киберполигона
+        curl -o bbdata.svg "https://stdstatistics.onrender.com/generatebb-svg?username={your_standoff365_login}"     # бейджик с багбаунти статистикой 
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      
         mv data.svg img/data.svg
+        mv bbdata.svg img/bbdata.svg
     - name: Display directory contents for debugging
       run: ls -R
 
     - name: Commit new SVG
       run: |
         git add img/data.svg
+        git add img/bbdata.svg
         git diff-index --quiet HEAD || git commit -m 'Update SVG image'
       env:
-        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }}
+        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }} # сюда вставлять токен
 
     - name: Update README with new timestamp
       run: |
         TIMESTAMP=$(date +%s)
-        sed -i.bak "s|!\[Dynamic SVG Image\](https://github.com/{Your-GitHub-login}/{Your-GitHub-login}/blob/main/img/data.svg?raw=true).*|![Dynamic SVG Image](https://github.com/OohWhatever/OohWhatever/blob/main/img/data.svg?raw=true&timestamp=${TIMESTAMP})|" README.md
+        sed -i.bak "s|!\[Dynamic SVG Image\](https://github.com/{your-github-login}/{your-github-login}/blob/main/img/data.svg?raw=true).*|![Dynamic SVG Image](https://github.com/OohWhatever/OohWhatever/blob/main/img/data.svg?raw=true&timestamp=${TIMESTAMP})|" README.md       # основной бейджик со статистикой киберполигона
+        sed -i.bak "s|!\[Dynamic BBSVG Image\](https://github.com/{your-github-login}/{your-github-login}/blob/main/img/bbdata.svg?raw=true).*|![Dynamic BBSVG Image](https://github.com/OohWhatever/OohWhatever/blob/main/img/bbdata.svg?raw=true&timestamp=${TIMESTAMP})|" README.md      # бейджик с багбаунти статистикой киберполигона
         git add README.md
         git diff-index --quiet HEAD || git commit -m 'Update README with new SVG'
       env:
-        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }}
+        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }} # сюда вставлять токен
 
     - name: Push changes
       env:
-        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }}
+        GITHUB_TOKEN: ${{ secrets.README_WORKFLOW }} # сюда вставлять токен
       run: |
         git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
         git push origin HEAD:main
+
 ```
 
 This code will update your badge everu hour
@@ -100,7 +107,7 @@ This code will update your badge everu hour
 >Here you need to change soime parameters like {Your-GitHub-login} to your login, { secrets.README_WORKFLOW } to name of your github secret and {Standoff365-login} to your actual login
 ## Create first img file
 
-Push to your repo emty data.svg file in `/img` folder or you can download it from `https://stdstatistics.onrender.com/generate-svg?username={Standoff365-login}`
+Push to your repo emty data.svg or bbdata.svg file in `/img` folder or you can download it from `https://stdstatistics.onrender.com/`
 
 ![image](https://github.com/OohWhatever/STDstatistics/assets/41408448/bc51fc78-261e-4bcf-92b4-2abd1cc55af5)
 
