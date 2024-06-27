@@ -12,7 +12,7 @@ def fetch_user_data(username):
     response = requests.get(STANDOFF_API_URL.format(username=username))
     response.raise_for_status()
     data = response.json()
-    return data['items'][0] if data['items'] else None
+    return data if data else None
 
 def generate_svg(username, position, crVulnerability, crBusinessRisk):
     svg_template = f'''
