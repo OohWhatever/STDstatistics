@@ -6,7 +6,7 @@ import random
 
 app = Flask(__name__)
 
-STANDOFF_API_URL = "https://api.standoff365.com/api/scoring-mgr/scoring/total?page_number=1&pagesize=10&search={username}&sort=cyberrange_asc"
+STANDOFF_API_URL = "https://api.standoff365.com/api/scoring-mgr/scoring/total/{username}"
 
 def fetch_user_data(username):
     response = requests.get(STANDOFF_API_URL.format(username=username))
