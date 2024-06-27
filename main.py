@@ -106,7 +106,7 @@ def generate_svg_endpoint():
     crBusinessRisk = user_data['crBusinessRisk']
     bbReportsCount = user_data['bbReportsCount']
     
-    svg_image = generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk)
+    svg_image = generate_svg(username, position, crVulnerability, crBusinessRisk)
     return Response(svg_image, mimetype='image/svg+xml')
 
 
