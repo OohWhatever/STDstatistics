@@ -14,7 +14,7 @@ def fetch_user_data(username):
     data = response.json()
     return data['items'][0] if data['items'] else None
 
-def generate_svg(username, position, crVulnerability, bbTotal, crBusinessRisk):
+def generate_svg(username, position, crVulnerability, crBusinessRisk):
     svg_template = f'''
    <svg xmlns="http://www.w3.org/2000/svg" width="470" height="180">
   <rect x="0" y="0" width="470" height="165" rx="20" ry="20" fill="url(#MyGradient)" />
