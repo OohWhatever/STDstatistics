@@ -23,6 +23,7 @@ https://api.standoff365.com/api/scoring-mgr/scoring/total/{USERNAME}
 https://api.standoff365.com/api/bug-bounty/metrics/user/{USENAME}
 Метрики
 {
+  "username": "r0hack", # ник
   "bbPosition": 1, # позиция в багбаунти
   "signal": 970, # Качетсво отчетов
   "impact": 434, # Польза
