@@ -1,0 +1,38 @@
+links
+https://api.standoff365.com/api/scoring-mgr/scoring/total/{USERNAME}
+Метрики:
+{
+  "position": 61, # позиция в рейтинге STANDOFF площадки
+  "crPosition": 51, # позиция на киберполигоне 
+  "bbPosition": 205, # позиция в багбаунти
+  "userId": 3565,
+  "username": "whatever", # ник
+  "deleted": false,
+  "groupSlug": "5hm3l",
+  "groupName": "5HM3L",
+  "groupLogo": "4167f3dd-7337-4c26-ae0a-d453a84150a4.png",
+  "total": 61200, # общее количество баллов
+  "bbTotal": 0, # баллов за багбаунти
+  "crTotal": 61200, # баллов за недопустимые события
+  "bbReportsCount": 0, # Количество отчетов на багбаунти
+  "crReportsCount": 21, # Количество отчетов на киберполигоне
+  "crVulnerability": 600, # баллов за уязвимости
+  "crBusinessRisk": 60600 # баллов за недопустимые события
+}
+---
+https://api.standoff365.com/api/bug-bounty/metrics/user/{USENAME}
+Метрики
+{
+  "signal": 970, # Качетсво отчетов
+  "impact": 434, # Польза
+  "reportsTotal": 167, # Количество отчетов по ББ
+  "reportsFinished": 161, # Отчетов закрыто
+  "reportsInProgress": 6, # Активные отчеты в проверке
+  "reportsAccepted": 126, # Принятые отчеты
+  "reportsInformational": 6, # отчеты информатив
+  "reportsDuplicate": 28, # отчеты дубликаты
+  "reportsOutOfScope": 0, # отчеты вне скоупа
+  "reportsRejected": 1, # отклоненные отчеты
+  "reportsAbuse": 0, # спам отчеты
+  "score": 751.4173274552564 # ??????? я не знаю что это такое... 
+}
