@@ -9,6 +9,7 @@ import random
 app = Flask(__name__)
 
 STANDOFF_API_URL = "https://api.standoff365.com/api/scoring-mgr/scoring/total/{username}"
+STANDOFFBB_API_URL = "https://api.standoff365.com/api/bug-bounty/metrics/user/{username}"
 
 def fetch_user_data(username):
     response = requests.get(STANDOFF_API_URL.format(username=username))
@@ -16,9 +17,11 @@ def fetch_user_data(username):
     data = response.json()
     return data if data else None
 
-
-
-
+def fetch_user_bbdata(username):
+    response = requests.get(STANDOFFBB_API_URL.format(username=username))
+    response.raise_for_status()
+    data = response.json()
+    return data if data else None
 
 
 @app.route('/help', methods=['GET'])
