@@ -113,5 +113,11 @@ Push to your repo emty data.svg or bbdata.svg file in `/img` folder or you can d
 
 ## PROFIT
 
+## To do:
+- [x] Badge for BugBouny statistics
+- [ ] Some design changes
+- [ ] More information in badges
+- [ ] Standoff profile medals
+
 
 
