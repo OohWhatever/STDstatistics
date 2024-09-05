@@ -149,7 +149,7 @@ def generatebb_svg(username, bbPosition,signal,impact,reportsTotal,reportsFinish
   {impact}
 </text>
  <text x="220" y="123" text-anchor="end" fill="#00ffa6" font-size="13" font-weight="bold" font-family="Arial">
-  {bbReportsCount}
+  {reportsTotal}
 </text>
  <text x="220" y="143" text-anchor="end" fill="#00ffa6" font-size="13" font-weight="bold" font-family="Arial">
   {reportsFinished}
