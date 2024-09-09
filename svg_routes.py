@@ -106,7 +106,7 @@ def generatebb_svg(username, bbPosition,signal,impact,reportsTotal,reportsFinish
 <text opacity="0.6" fill="white" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="0em"><tspan x="11" y="103.467">Reports impact:</tspan></text>
 <text fill="#00FFA6" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="216.941" y="104.16">{impact}</tspan></text>
 <text opacity="0.6" fill="white" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="0em"><tspan x="11" y="122.467">Total report count:</tspan></text>
-<text fill="#00FFA6" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="160.926" y="123.16">{bbReportsCount}</tspan></text>
+<text fill="#00FFA6" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="160.926" y="123.16">{reportsTotal}</tspan></text>
 <text opacity="0.6" fill="white" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="0em"><tspan x="11" y="141.467">Reports finished:</tspan></text>
 <text fill="#00FFA6" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="164.887" y="142.16">{reportsFinished}</tspan></text>
 <text opacity="0.6" fill="white" xml:space="preserve" style="white-space: pre" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="0em"><tspan x="11" y="160.467">Reports in progress:</tspan></text>
