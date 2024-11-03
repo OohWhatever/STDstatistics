@@ -102,9 +102,9 @@ jobs:
 
 ```
 
-This code will update your badge everu hour
+This code will update your badge every hour
 
->Here you need to change soime parameters like {Your-GitHub-login} to your login, { secrets.README_WORKFLOW } to name of your github secret and {Standoff365-login} to your actual login
+>Here you need to change some parameters like {Your-GitHub-login} to your login, { secrets.README_WORKFLOW } to name of your github secret and {Standoff365-login} to your actual login
 ## Create first img file
 
 Push to your repo emty data.svg or bbdata.svg file in `/img` folder or you can download it from `https://stdstatistics.onrender.com/`
@@ -115,7 +115,7 @@ Push to your repo emty data.svg or bbdata.svg file in `/img` folder or you can d
 
 ## To do:
 - [x] Badge for BugBouny statistics
-- [ ] Some design changes
+- [x] Some design changes
 - [x] More information in badges
 - [ ] Standoff profile medals
 
